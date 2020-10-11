@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Raleway:wght@300;500&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+body {
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  font-family: "Raleway", sans-serif;
+  background: url("./images/white-waves.png");
+  font-variant-caps: all-small-caps;
+  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  transition: color 0.15s, background-color 0.2s;
+}
+
+a:link {
+  background-color: transparent;
+  color: rgb(18, 7, 116);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(18, 7, 116);
+  text-decoration: none;
+}
+
+a:focus {
+  color: rgb(18, 7, 116);
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: transparent;
+  color: rgb(255, 2, 108);
+  text-decoration: none;
+}

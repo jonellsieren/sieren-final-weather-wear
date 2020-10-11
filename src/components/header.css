@@ -1,0 +1,13 @@
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.header__logo {
+  font-size: 3rem;
+}
+
+.header__nav {
+  font-family: "Quicksand", sans-serif, bold;
+  font-size: 20px;
+  text-align: center;
+}

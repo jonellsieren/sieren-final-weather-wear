@@ -1,32 +1,33 @@
 import React, { useState } from "react";
 import "./weather-form.css";
 
-function WeatherForm() {
-  const [name, setName] = useState("");
-  const [numQuestions, setNumQuestions] = useState(-10);
-  const [category, setCategory] = useState(1);
+function WeatherForm(props) {
+  // const [temperature, setTemperature] = useState(-10);
+  // const [precipitation, setPrecipitation] = useState(1);
+  const {
+    temperature,
+    setTemperature,
+    precipitation,
+    setPrecipitation,
+  } = props;
 
-  const onNameChange = (event) => {
-    setName(event.target.value);
-  };
-
-  const onNumQuestionsChange = (event) => {
+  const onTemperatureChange = (event) => {
     const min = Number.parseInt(event.target.min);
     const max = Number.parseInt(event.target.max);
     const value = Number.parseInt(event.target.value);
-    if (value < min) setNumQuestions(min);
-    else if (value > max) setNumQuestions(max);
-    else setNumQuestions(value);
+    if (value < min) setTemperature(min);
+    else if (value > max) setTemperature(max);
+    else setTemperature(value);
   };
 
-  const onCategoryChange = (event) => {
-    setCategory(event.target.value);
+  const onPrecipitationChange = (event) => {
+    setPrecipitation(event.target.value);
   };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    alert(`Temperature is ${numQuestions} and it's ${category}.`);
+    alert(`Temperature is ${temperature} degrees and it's ${precipitation}.`);
   };
 
   return (
@@ -41,8 +42,8 @@ function WeatherForm() {
           id="questions"
           min="-10"
           max="100"
-          value={numQuestions}
-          onChange={onNumQuestionsChange}
+          value={temperature}
+          onChange={onTemperatureChange}
         />
       </div>
 
@@ -53,12 +54,12 @@ function WeatherForm() {
         <select
           id="category"
           className="weather-form__input"
-          value={category}
-          onChange={onCategoryChange}
+          value={precipitation}
+          onChange={onPrecipitationChange}
         >
-          <option value="1">It's Raining!</option>
-          <option value="2">It's Snowing</option>
-          <option value="3">No rain or snow. </option>
+          <option value="raining!">It's Raining!</option>
+          <option value="snowing!">It's Snowing</option>
+          <option value="not raining or snowing.">No rain or snow. </option>
         </select>
       </div>
 
